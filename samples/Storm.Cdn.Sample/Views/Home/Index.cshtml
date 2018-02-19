@@ -1,0 +1,37 @@
+﻿@using Storm.AspNetCore.Cdn
+@addTagHelper *, Storm.Cdn
+@inject ICdnUriProvider CdnUrlProvider
+
+<html>
+<head>
+    <title>Sample</title>
+</head>
+<body>
+<p>Hello World</p>
+<ul>
+    <li>@CdnUrlProvider.GetUri("/file.jpg")</li>
+    <li>@CdnUrlProvider.GetUri("prefix/file.jpg")</li>
+    <li>@CdnUrlProvider.GetUri("http://something.com/file.jpg")</li>
+    <li>@CdnUrlProvider.GetUri("wth")</li>
+    <li>@CdnUrlProvider.GetUri("")</li>
+</ul>
+
+<ul>
+    <li><img src="file.jpg" /></li>
+    <li><img src="~/file.jpg" storm-cdn-ignore="false" /></li>
+    <li><img src="file.jpg" storm-cdn-provider="AzureCdn" /></li>
+</ul>
+
+<ul>
+    <li><link type="text/css" rel="stylesheet" href="file.css" crossorigin="anonymous" /></li>
+    <li><link type="text/css" rel="stylesheet" href="~/file.css" crossorigin="anonymous" storm-cdn-ignore="true" /></li>
+    <li><link type="text/css" rel="stylesheet" href="file.css" crossorigin="anonymous" storm-cdn-provider="AzureCdn" /></li>
+</ul>
+
+<ul>
+    <li><script type="text/javascript" src="script.js" crossorigin="anonymous"></script></li>
+    <li><script type="text/javascript" src="~/script.js" crossorigin="anonymous" storm-cdn-ignore="true"></script></li>
+    <li><script type="text/javascript" src="script.js" crossorigin="anonymous" storm-cdn-provider="AzureCdn"></script></li>
+</ul>
+</body>
+</html>
