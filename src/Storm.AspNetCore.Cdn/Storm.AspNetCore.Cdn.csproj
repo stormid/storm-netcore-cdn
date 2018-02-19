@@ -11,9 +11,9 @@
     <Company>Storm ID Ltd</Company>
     <Description>Provides taghelpers to aid with the generation of resource uri's for &lt;script&gt;, &lt;link&gt; and &lt;img&gt; tags.  Also provides utilities interfaces to generate cdn uri's from configuration settings with support for multiple active cdn providers</Description>
     <Copyright>Storm ID Ltd</Copyright>
-    <PackageProjectUrl>https://www.github.com/stormid</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/stormid/Storm.AspNetCore.Cdn</PackageProjectUrl>
     <PackageIconUrl>https://www.stormid.com/content/img/icons/apple-touch-icon.png</PackageIconUrl>
-    <RepositoryUrl>https://www.github.com/stormid</RepositoryUrl>
+    <RepositoryUrl>git@github.com:stormid/Storm.AspNetCore.Cdn.git</RepositoryUrl>
     <PackageTags>taghelper cdn</PackageTags>
     <IsPackable>true</IsPackable>
     <PackageId>Storm.AspNetCore.Cdn</PackageId>
@@ -37,7 +37,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
     
-    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" IncludeAssets="Analyzers" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" ExcludeAssets="Analyzers" PrivateAssets="All" />
 
   </ItemGroup>
 </Project>
