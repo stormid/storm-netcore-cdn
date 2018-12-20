@@ -1,12 +1,14 @@
 variables:
   cake.buildTarget: 'CI'
   build.configuration: 'Release'
+pool:
+  vmImage: 'vs2017-win2016'
 trigger:
 - master
 steps:
 - task: cake-build.cake.cake-build-task.Cake@0
   displayName: 'Run Cake Build'
   name: 'RunCakeBuild'
-  inputs:
+  inputs:  
     target: $(cake.buildTarget)
     arguments: '--Configuration="$(build.configuration)"'
