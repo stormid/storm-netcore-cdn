@@ -1,3 +1,4 @@
+name: Storm.AspNetCore.Cdn
 variables:
   cake.buildTarget: 'CI'
   build.configuration: 'Release'
